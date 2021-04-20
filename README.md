@@ -10,3 +10,7 @@ talk or code. For example,
 ```
 2021-04-21/juila_internals_chris_f/...
 ````
+
+Collaborators should feel free to push directly to `main` branch in this
+repository, but please keep such changes isolated to content in your own
+directories.
