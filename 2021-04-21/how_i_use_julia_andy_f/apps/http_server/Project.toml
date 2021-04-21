@@ -1,0 +1,7 @@
+name = "http_server"
+uuid = "d67f5f1e-12bb-44f0-89ff-8b3b5cbe692d"
+authors = ["Andy Ferris <ferris.andy@gmail.com>"]
+version = "0.1.0"
+
+[deps]
+HTTP = "cd3eb016-35fb-5094-929b-558a96fad6f3"
