@@ -315,7 +315,7 @@ md"""
 md"""
 # Julia Internals — Outline
 
-Julia's compilation stages are moderately standard:
+Julia's compilation stages are moderately standard. We'll take a tour of them.
   - Parsing
   - Lowering
   - Type Inference (ok, many compilers don't do this)
@@ -432,7 +432,7 @@ print_expr_tree(:(
 
 # ╔═╡ 0fbac98e-cce7-4db6-b78f-577f8b030144
 md"""
-# Macros - Customizing Syntax
+# Macros - customizing syntax
 
 * A macro is a function taking an `Expr` and returning an `Expr`
 * Names prefixed with `@` let the compiler know to invoke them *during compilation*, rather than during running of the code.
@@ -555,7 +555,7 @@ md"""
 ## Introspecting type inference
 
 * `@code_typed` or `code_typed()` shows results of type inference on the body of a function
-* Needs the function name *and* input argument types.
+* Needs the function name *and* input argument types
 * `@code_typed` lets you supply argument values, but only the type are used
 """
 
@@ -663,8 +663,7 @@ Julia generates efficient machine code by translating the typed SSAIR into LLVM'
 * Intermediate result of LLVM IR
 * **Output** is **Machine code** — may be viewed as assembly code
 
-* Can be introspected with `@code_llvm` and `@code_native` / `code_llvm` and `code_native`.
-
+* Introspect with `@code_llvm` and `@code_native` / `code_llvm` and `code_native`.
 """
 
 # ╔═╡ 9e73168e-d41e-4d74-9d9b-b21e5879dd0a
@@ -694,7 +693,7 @@ md"""
 
 * A function which takes *types* and produces *syntax* which is further compiled
 * Fancy workaround for missed compiler optimizations
-* Example: unrolling a loop for short vectors
+* Example: unrolling a loop for short vectors (cf. StaticArrays.jl)
 """
 
 # ╔═╡ 9c264171-6c13-46d9-b9bc-9b015dd930e7
@@ -707,6 +706,35 @@ end
 	
 end
 
+# ╔═╡ 97d0d99d-a30e-4f23-a7f5-f0e6726ba3e1
+md"""
+# Extra: A Light-Hearted Demo — Gameoji
+
+* An emoji-based dungeon crawler I made for my kids
+* https://github.com/c42f/Gameoji (currently private though)
+* Silly but fun 😅, and has various interesting technical points (level generation, multiplayer networking, remote REPL, ECS object model)
+* Demo
+"""
+
+# ╔═╡ 46fac76e-a39c-4e4c-a571-81dd88baae94
+md"""
+## RemoteREPL.jl
+
+* <https://github.com/c42f/RemoteREPL.jl>
+* Get a new Julia REPL in an existing process
+* Demo
+"""
+
+# ╔═╡ 3cb9de69-69de-421c-9ebe-515a3a3a6983
+md"""
+## Overseer.jl
+
+* Entity-Component-System (ECS) library <https://github.com/louisponet/Overseer.jl>
+* Entity — A thing in the game. Eg, player, monster, wall, etc.
+* Component — Property of an entity. Eg, position, emoji icon, etc
+* System — Reads or updates a small set of components, describing the game rules. The "physics" of the game world, if you like.  Eg, position upate, rendering, player input, etc.
+"""
+
 # ╔═╡ 5e5e8126-4453-4e04-9e01-f148ee980513
 begin
 	md"""
@@ -717,7 +745,9 @@ begin
   - World age mechanism
 """
 
-	md"(Extra bits and pieces)"
+	md"""# - - -
+	
+	Other notes"""
 end
 
 # ╔═╡ Cell order:
@@ -789,4 +819,7 @@ end
 # ╟─b5e2edd2-e8d8-49e0-9a76-6b149926457a
 # ╠═9c264171-6c13-46d9-b9bc-9b015dd930e7
 # ╠═5d24448a-f2be-42ff-aa30-645c049bec38
+# ╟─97d0d99d-a30e-4f23-a7f5-f0e6726ba3e1
+# ╟─46fac76e-a39c-4e4c-a571-81dd88baae94
+# ╟─3cb9de69-69de-421c-9ebe-515a3a3a6983
 # ╟─5e5e8126-4453-4e04-9e01-f148ee980513
