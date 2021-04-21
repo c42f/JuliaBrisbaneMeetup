@@ -1,4 +1,5 @@
 [deps]
+ANSIColoredPrinters = "a4c015fc-c6ff-483c-b24f-f7ea428134e9"
 AbstractTrees = "1520ce14-60c1-5f80-bbc7-55ef81b5835c"
 Pluto = "c3e4b0f8-55cb-11ea-2926-15256bba5781"
 PlutoUI = "7f904dfe-b85e-4ff6-b463-dae2292396a8"
