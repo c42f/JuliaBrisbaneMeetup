@@ -224,6 +224,21 @@ end
 
 # ╔═╡ 18c4f7f8-6165-49f5-9c03-a1a767a71776
 md"""
+#### To follow along
+
+<https://github.com/c42f/JuliaBrisbaneMeetup/tree/main/2021-04-21/julia_internals_chris_f>
+
+Start a REPL, go to the directory with the checked out code, and run
+```julia
+using Pkg
+Pkg.activate(".")
+Pkg.instantiate()
+using Pluto
+Pluto.run()
+```
+
+* Poll of proximate languages (python, C++, matlab, R, Fortran, ...)
+
 ##### Presentation setup code
 
 (unfold the cells below to see some fun but unsightly hacks for the Pluto.jl presentation 😅)
